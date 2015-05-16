@@ -1,6 +1,7 @@
 <?php namespace Ejimba\LaravelWpApi;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
 
 class LaravelWpApiServiceProvider extends ServiceProvider {
 
