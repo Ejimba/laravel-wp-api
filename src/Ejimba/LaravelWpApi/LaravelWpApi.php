@@ -1,6 +1,7 @@
 <?php namespace Ejimba\LaravelWpApi;
 
 use GuzzleHttp\Client;
+use Config;
 
 class LaravelWpApi
 {

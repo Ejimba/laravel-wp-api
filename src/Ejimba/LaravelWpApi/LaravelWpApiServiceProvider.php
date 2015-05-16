@@ -29,7 +29,7 @@ class LaravelWpApiServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		AliasLoader::getInstance()->alias('LaravelWpApi', 'Ejimba\AtSms\Facades\LaravelWpApi');
+		AliasLoader::getInstance()->alias('LaravelWpApi', 'Ejimba\LaravelWpApi\Facades\LaravelWpApi');
 		$this->app->bind('laravel-wp-api', function ()
         {
         	return new LaravelWpApi;
