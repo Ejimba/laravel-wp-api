@@ -1,4 +1,4 @@
-<?php namespace Cyberduck\LaravelWpApi;
+<?php namespace Ejimba\LaravelWpApi;
 
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client;
@@ -41,7 +41,7 @@ class LaravelWpApiServiceProvider extends ServiceProvider {
 
         });
 
-        $this->app->bind('Cyberduck\LaravelWpApi\WpApi', function($app)
+        $this->app->bind('Ejimba\LaravelWpApi\WpApi', function($app)
         {
             return $app['wp-api'];
         });

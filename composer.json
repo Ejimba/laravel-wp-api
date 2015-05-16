@@ -1,5 +1,5 @@
 {
-    "name": "cyberduck/laravel-wp-api",
+    "name": "ejimba/laravel-wp-api",
     "description": "Laravel package for the Wordpress JSON REST API",
     "keywords": ["laravel", "package", "wordpress", "API", "REST"],
     "license": "MIT",
@@ -7,6 +7,10 @@
         {
             "name": "Ben Speakman",
             "email": "ben@cyber-duck.co.uk"
+        },
+        {
+            "name": "Ejimba Eric",
+            "email": "ejimba@gmail.com"
         }
     ],
     "require": {
@@ -19,7 +23,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Cyberduck\\LaravelWpApi\\": "src/"
+            "Ejimba\\LaravelWpApi\\": "src/"
         }
     },
     "minimum-stability": "stable"

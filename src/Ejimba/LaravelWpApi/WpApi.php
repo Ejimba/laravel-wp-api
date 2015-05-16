@@ -1,4 +1,4 @@
-<?php namespace Cyberduck\LaravelWpApi;
+<?php namespace Ejimba\LaravelWpApi;
 
 use GuzzleHttp\Client;
 
