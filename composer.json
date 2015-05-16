@@ -19,9 +19,6 @@
         "guzzlehttp/guzzle": "5.x"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
             "Ejimba\\LaravelWpApi\\": "src/"
         }
