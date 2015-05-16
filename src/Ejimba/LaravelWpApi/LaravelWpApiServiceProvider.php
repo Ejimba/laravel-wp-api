@@ -1,7 +1,6 @@
 <?php namespace Ejimba\LaravelWpApi;
 
 use Illuminate\Support\ServiceProvider;
-use GuzzleHttp\Client;
 
 class LaravelWpApiServiceProvider extends ServiceProvider {
 
@@ -19,9 +18,7 @@ class LaravelWpApiServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->publishes([
-            __DIR__.'/../../config/config.php' => config_path('wp-api.php'),
-        ]);
+		$this->package('ejimba/laravel-wp-api');
 	}
 
 	/**
@@ -31,19 +28,10 @@ class LaravelWpApiServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bindShared('wp-api', function ($app) {
-
-            $endpoint = $this->app['config']->get('wp-api.endpoint');
-            $auth     = $this->app['config']->get('wp-api.auth');
-            $client   = new Client();
-            
-            return new WpApi($endpoint, $client, $auth);
-
-        });
-
-        $this->app->bind('Ejimba\LaravelWpApi\WpApi', function($app)
+		AliasLoader::getInstance()->alias('LaravelWpApi', 'Ejimba\AtSms\Facades\LaravelWpApi');
+		$this->app->bind('laravel-wp-api', function ()
         {
-            return $app['wp-api'];
+        	return new LaravelWpApi;
         });
 	}
 
@@ -54,7 +42,7 @@ class LaravelWpApiServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return ['wp-api'];
+		return array();
 	}
 
 }

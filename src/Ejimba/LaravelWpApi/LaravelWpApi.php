@@ -2,16 +2,16 @@
 
 use GuzzleHttp\Client;
 
-class WpApi
+class LaravelWpApi
 {
 
     protected $client;
 
-    public function __construct($endpoint, Client $client, $auth = null)
+    public function __construct()
     {
-        $this->endpoint = $endpoint;
-        $this->client   = $client;
-        $this->auth     = $auth;
+        $this->endpoint = Config::get('laravel-wp-api::endpoint');
+        $this->client   = new Client;
+        $this->auth     = Config::get('laravel-wp-api::auth', null);
     }
 
     public function posts($page = null)
