@@ -1,79 +1,109 @@
 # laravel-wp-api
-Laravel 4.2 package for the [Wordpress JSON REST API](https://github.com/WP-API/WP-API) 
+
+This is a fork of [https://github.com/Cyber-Duck/laravel-wp-api](https://github.com/Cyber-Duck/laravel-wp-api) (Laravel 5 ONLY).
+All credits go to [Cyber-Duck](https://github.com/Cyber-Duck).
+This is a Laravel 4.2 package for the [Wordpress JSON REST API](https://github.com/WP-API/WP-API) 
 
 ## Install
 
-Simply add the following line to your `composer.json` and run install/update:
+This is a Laravel 4.2 package. Laravel 5 users should use [this](https://github.com/Cyber-Duck/laravel-wp-api)
+Simply add the following line to your `composer.json` and run `composer update`:
 
-    "ejimba/laravel-wp-api": "dev-master"
+```php
+"ejimba/laravel-wp-api": "0.1.x"
+```
+
+Add 
+```php
+'Ejimba\LaravelWpApi\LaravelWpApiServiceProvider',
+```
+to the `providers` array in your `app/config/app.php`:
 
 ## Configuration
 
 Publish the package config files to configure the location of your Wordpress install:
 
-    php artisan vendor:publish
+```php
+php artisan config:publish ejimba/laravel-wp-api
+```
 
-You will also need to add the service provider and optionally the facade alias to your `app/config/app.php`:
+Ensure you update the endpoint to match your wordpress site e.g.
 
 ```php
-'providers' => array(
-  'Ejimba\LaravelWpApi\LaravelWpApiServiceProvider'
-)
+return array(
 
-'aliases' => array(
-  'WpApi' => 'Ejimba\LaravelWpApi\Facades\WpApi'
-),
+    'endpoint' => 'http://www.mywordpresssite.com',
+    
+);
 ```
+
+On the target site, ensure you install the [Wordpress JSON API Plugin](https://wordpress.org/plugins/json-rest-api/). You search it from the plugins menu in the worpress dashboard.
 
 ### Usage
 
 The package provides a simplified interface to some of the existing api methods documented [here](http://wp-api.org/).
-You can either use the Facade provided or inject the WpApi class.
+You can either use the Facade provided or inject the LaravelWpApi class.
 
 #### Posts
+##### All Posts
 ```php
-WpApi::posts($page);
+LaravelWpApi::posts();
+
+```
+##### Posts in page
+```php
+LaravelWpApi::posts($page);
+
+```
+##### Single Post
+```php
+LaravelWpApi::post($slug);
 
 ```
 
 #### Pages
 ```php
-WpApi::pages($page);
-
-```
-
-#### Post
-```php
-WpApi::post($slug);
+LaravelWpApi::pages();
 
 ```
 
 #### Categories
 ```php
-WpApi::categories();
+LaravelWpApi::categories();
 
 ```
 
 #### Tags
 ```php
-WpApi::tags();
+LaravelWpApi::tags();
 
 ```
 
 #### Category posts
 ```php
-WpApi::category_posts($slug, $page);
+LaravelWpApi::category_posts($slug, $page);
 
 ```
 
 #### Search
 ```php
-WpApi::search($query, $page);
+LaravelWpApi::search($query, $page);
 
 ```
 
 #### Archive
 ```php
-WpApi::archive($year, $month, $page);
+LaravelWpApi::archive($year, $month, $page);
 
 ```
+
+## Support
+In case of any issue please test with a new laravel installation. If it persists, [file an issue](https://github.com/Cyber-Duck/laravel-wp-api/issues) and I will try my best to help you out.
+
+## Credits
+1. [Cyber-Duck](https://github.com/Cyber-Duck)
+2. [Laravel](http://laravel.com)
+
+## License
+
+Licensed under [The MIT License (MIT)](LICENSE).
