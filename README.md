@@ -1,6 +1,6 @@
 # laravel-wp-api
 
-This is a fork of [https://github.com/Cyber-Duck/laravel-wp-api](https://github.com/Cyber-Duck/laravel-wp-api) (Laravel 5 ONLY).
+This is a fork of [https://github.com/Cyber-Duck/laravel-wp-api](https://github.com/Cyber-Duck/laravel-wp-api).
 All credits go to [Cyber-Duck](https://github.com/Cyber-Duck).
 This is a Laravel 4.2 package for the [Wordpress JSON REST API](https://github.com/WP-API/WP-API) 
 
