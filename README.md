@@ -98,7 +98,7 @@ LaravelWpApi::archive($year, $month, $page);
 ```
 
 ## Support
-In case of any issue please test with a new laravel installation. If it persists, [file an issue](https://github.com/Cyber-Duck/laravel-wp-api/issues) and I will try my best to help you out.
+In case of any issue please test with a new laravel installation. If it persists, [file an issue](https://github.com/Ejimba/laravel-wp-api/issues) and I will try my best to help you out.
 
 ## Credits
 1. [Cyber-Duck](https://github.com/Cyber-Duck)
